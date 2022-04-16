@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class UI {
 	Scanner sc;
@@ -7,11 +9,11 @@ public class UI {
 		this.sc = sc;
 	}
 
-	String[] options = {
+	String[] operations = {
 			"Exit",
 			"Single Threaded",
 			"Multi Threaded",
-			"Boudned Threadpool",
+			"Bounded Threadpool",
 	};
 
 	public int getOpperation() {
@@ -19,19 +21,24 @@ public class UI {
 
 		while (true) {
 			System.out.println("\nSelect an execution method, or exit: ");
-			for (int i = 0; i < options.length; i++) {
-				System.out.println(i + ") " + options[i]);
+			for (int i = 0; i < operations.length; i++) {
+				System.out.println(i + ") " + operations[i]);
 			}
 
 			operation = sc.nextInt();
-			if (operation >= 0 && operation < options.length) {
+			if (operation >= 0 && operation < operations.length) {
 				return operation;
 			}
 		}
 	}
 
-	public int getInput(String type) {
-		System.out.println("Enter number for " + type + " calculation: ");
+	public int getInput() {
+		System.out.println("Enter number for calculation: ");
+		return sc.nextInt();
+	}
+
+	public int getThreads() {
+		System.out.println("Enter number of threads (Enter 0 for default): ");
 		return sc.nextInt();
 	}
 
@@ -45,10 +52,10 @@ public class UI {
 		System.out.println("");
 		System.out.println(type + " opperation completed for " + input + " completed in: " + time + "ms");
 
-		System.out.println("\nSanity checks:");
-		System.out.println("Total Primes found: " + primes.size());
-		System.out.println("Total Non Primes found: " + nonPrimes.size());
-		System.out.println("primes.size() + nonPrimes.size(): " + (primes.size() + nonPrimes.size()));
+		System.out.println("- Sanity checks:");
+		System.out.println("- Total Primes found: " + primes.size());
+		System.out.println("- Total Non Primes found: " + nonPrimes.size());
+		System.out.println("- primes.size() + nonPrimes.size(): " + (primes.size() + nonPrimes.size()));
 
 		System.out.println("\n");
 	}
