@@ -1,4 +1,4 @@
-## Concurrent Programing - Assignment 2
+## Concurrent Programing - Assignment 3
 
 Rowan University
 
@@ -8,34 +8,27 @@ Semester: Spring 2022
 
 ## Instructions:
 
-All UI is through the terminal
+This assignment will serve as an alteration to your Assignment 2.
 
-Instructions are displayed during each interation:
+In Assignment 2 you had a menu that allowed you to perform your prime
+calculations in a single threaded way or an unbounded way. In this assignment we
+will attempt to perform the task in a bounded way using the Executor framework.
 
-1. Single thread execution
-2. Multi thread execution
-3. Exit
+Add a menu item to your submission from Assignment 2 (if your assignment 2 does
+not have a finalized grade by 4/9 please contact me). This menu item will say
+"Bounded Threadpool".
 
-Then enter the number you want to evaluate, execution time as well as some
-sanity checks will print after the input is processed.
+You will then implement a solution to the same problem we have had before
+(primes between 2-n with factorization for non primes) but you will do it using
+a bounded thread pool. This bounded thread pool should use either Callables or
+Futures to relay information. Do not use Runnables for this implementation.
 
-## Assignment Details
+There should be a sub menu that allows the user to submit the size of the
+bounded thread pool with an option for 0 being a default implementation that
+uses the number of cores on the clients machine + 1.
 
-For this assignment, we will expand upon Part 1. Having a quality part 1 means
-that most of your program will be finished already!
+When finished, do a small write up that you will publish in your submission
+folder that details the runtime differences between the 3, and what the thread
+pool capacity was that gave you the best performance.
 
-For this assignment, we want to add a menu option to the user that the user can
-navigate via the command line. The user will be able to switch between the
-"styles" of solution for this problem. The styles of solution are as follows:
-
-1. Single Threaded (you can use your part 1 solution for this)
-
-2. Unbounded Thread (generate a new thread for each unit of work)
-
-Each option should do the same thing as part 1, but under a new method. After a
-calculation, I should be able to switch to another version until I need to quit.
-
-Time each version - we want to see what the differences are between your
-implementations!
-
-Zip up your classes with a README telling me how to get it launched.
+Submit your src folder as an archive.
