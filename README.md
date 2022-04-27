@@ -1,6 +1,8 @@
 ## Concurrent Programing - Assignment 3
 
-Rowan University Professor: Patrick McKee Semester: Spring 2022
+Rowan University 
+Professor: Patrick McKee 
+Semester: Spring 2022
 
 ## Writeup:
 
@@ -11,20 +13,20 @@ The following times are the result of running the calculation on a value of
 10,000
 
     Single Threaded  	20.0ms
-    Unbounded 				5128.0ms
-    Bounded (1)				63.0ms
-    Bounded (2)				46.0ms
-    Bounded (3)				17.0ms
+    Unbounded 			5128.0ms
+    Bounded (1)			63.0ms
+    Bounded (2)			46.0ms
+    Bounded (3)			17.0ms
     Bounded (4)   		12.0ms
-    Bounded (5)				15.0ms *** Default
-    Bounded (6) 			19.0ms
-    Bounded (10)			19.0ms
-    Bounded (20) 			15.0ms
-    Bounded (30) 			11.0ms
-    Bounded (40) 			13.0ms
-    Bounded (50) 			17.0ms
-    Bounded (100)			11.0ms
-    Bounded (500)			14.0ms
+    Bounded (5)			15.0ms *** Default
+    Bounded (6) 		19.0ms
+    Bounded (10)		19.0ms
+    Bounded (20) 		15.0ms
+    Bounded (30) 		11.0ms
+    Bounded (40) 		13.0ms
+    Bounded (50) 		17.0ms
+    Bounded (100)		11.0ms
+    Bounded (500)		14.0ms
     Bounded (10,000)	15.0ms
 
 Single threaded opperation was fairly quick, while unbounded operation was
