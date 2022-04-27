@@ -10,8 +10,8 @@ cores 4 ram 16.0 GB
 The following times are the result of running the calculation on a value of
 10,000
 
-    Single Threaded  				20.0ms
-    Unbounded 							5128.0ms
+    Single Threaded  	20.0ms
+    Unbounded 				5128.0ms
     Bounded (1)				63.0ms
     Bounded (2)				46.0ms
     Bounded (3)				17.0ms
