@@ -5,8 +5,16 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Collections;
 
-public class App {
+/** ... */
+/**
+ * 
+ * Main class for the program.
+ * 
+ * @param args
+ * @throws Exception
+ */
 
+public class App {
 	public static void main(String[] args) throws Exception {
 
 		Scanner sc = new Scanner(System.in);
@@ -20,7 +28,9 @@ public class App {
 			List<Integer> primes = new ArrayList<Integer>();
 			Map<Integer, List<Integer>> nonPrimes = new LinkedHashMap<Integer, List<Integer>>();
 
-			// Single-thread execution
+			/**
+			 * Single Threaded Execution
+			 */
 			if (operation == 1) {
 				int input = ui.getInput();
 				double startTime = System.currentTimeMillis();
@@ -35,7 +45,9 @@ public class App {
 				ui.printResults("Single-threaded", input, time, primes, nonPrimes);
 			}
 
-			// Multi-thread execution
+			/**
+			 * Unbounded Multi-threaded Execution
+			 */
 			else if (operation == 2) {
 				List<Integer> synPrimes = Collections.synchronizedList(primes);
 				Map<Integer, List<Integer>> synNonPrimes = Collections.synchronizedMap(nonPrimes);
@@ -47,7 +59,6 @@ public class App {
 					mt.start();
 				}
 
-				// wait for all threads to be done, I'm positive there's a better way to do this
 				while (synPrimes.size() + synNonPrimes.size() != input) {
 				}
 
@@ -57,6 +68,9 @@ public class App {
 				ui.printResults("Multi-threaded", input, time, synPrimes, synNonPrimes);
 			}
 
+			/**
+			 * Bounded Multi-threaded Execution
+			 */
 			else if (operation == 3) {
 				List<Integer> synPrimes = Collections.synchronizedList(primes);
 				Map<Integer, List<Integer>> synNonPrimes = Collections.synchronizedMap(nonPrimes);
@@ -71,7 +85,9 @@ public class App {
 				ui.printResults("Bounded", input, time, synPrimes, synNonPrimes);
 			}
 
-			// Exit
+			/**
+			 * Exit
+			 */
 			else {
 				System.out.println("Exiting...");
 				sc.close();

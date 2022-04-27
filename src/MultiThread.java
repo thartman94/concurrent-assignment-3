@@ -3,6 +3,10 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+/** ... */
+/**
+ * Handles the unbounded execution of the program.
+ */
 public class MultiThread extends Thread {
 
 	List<Integer> primes = new ArrayList<Integer>();
@@ -10,6 +14,13 @@ public class MultiThread extends Thread {
 	int i;
 	Factors fc = new Factors();
 
+	/**
+	 * Constructor for the MultiThread class.
+	 * 
+	 * @param primes    The list of primes.
+	 * @param nonPrimes The map of non-primes.
+	 * @param i         The the value to be factored, provided by user
+	 */
 	public MultiThread(List<Integer> primes, Map<Integer, List<Integer>> nonPrimes, int i) {
 		this.primes = primes;
 		this.nonPrimes = nonPrimes;
@@ -21,11 +32,8 @@ public class MultiThread extends Thread {
 		List<Integer> factors = fc.getFactors(i);
 		if (factors.size() == 2) {
 			primes.add(i);
-			// System.out.println("prime");
 		} else {
 			nonPrimes.put(i, factors);
-			// System.out.println("not prime");
-
 		}
 	}
 }

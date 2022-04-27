@@ -1,12 +1,21 @@
 import java.util.List;
 import java.util.ArrayList;
 
+/** ... */
+/**
+ * Handles the factorization of an integer value
+ */
 public class Factors {
 
 	public Factors() {
 	}
 
-	// Returns a list of factors of the given number.
+	/**
+	 * Factorizes an integer value
+	 * 
+	 * @param input The integer value to be factorized
+	 * @return The list of factors
+	 */
 	public List<Integer> getFactors(int number) {
 		List<Integer> factors = new ArrayList<Integer>();
 

@@ -7,6 +7,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ExecutorService;
 
+/**
+ * Handles the bounded execution of the program.
+ */
 public class Bounded {
 
 	List<Integer> primes = new ArrayList<Integer>();
@@ -14,6 +17,14 @@ public class Bounded {
 	int input;
 	int threads;
 
+	/**
+	 * Constructor for the Bounded class.
+	 * 
+	 * @param primes    The list of primes.
+	 * @param nonPrimes The map of non-primes.
+	 * @param input     The the value to be factored, provided by user
+	 * @param threads   The number of threads, provided by user
+	 */
 	public Bounded(List<Integer> primes, Map<Integer, List<Integer>> nonPrimes, int input, int threads) {
 		this.primes = primes;
 		this.nonPrimes = nonPrimes;

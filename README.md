@@ -1,10 +1,44 @@
 ## Concurrent Programing - Assignment 3
 
-Rowan University
+Rowan University Professor: Patrick McKee Semester: Spring 2022
 
-Professor: Patrick McKee
+## Writeup:
 
-Semester: Spring 2022
+Machine specs: cpu Intel i5-4690K (overclocked via ASUS automated overclocking)
+cores 4 ram 16.0 GB
+
+The following times are the result of running the calculation on a value of
+10,000
+
+    Single Threaded  				20.0ms
+    Unbounded 							5128.0ms
+    Bounded (1)				63.0ms
+    Bounded (2)				46.0ms
+    Bounded (3)				17.0ms
+    Bounded (4)   		12.0ms
+    Bounded (5)				15.0ms *** Default
+    Bounded (6) 			19.0ms
+    Bounded (10)			19.0ms
+    Bounded (20) 			15.0ms
+    Bounded (30) 			11.0ms
+    Bounded (40) 			13.0ms
+    Bounded (50) 			17.0ms
+    Bounded (100)			11.0ms
+    Bounded (500)			14.0ms
+    Bounded (10,000)	15.0ms
+
+Single threaded opperation was fairly quick, while unbounded operation was
+remarkably bad. This is due to the overhead of creating so many threads and
+switching between them.
+
+What was interesting is the results of the bounded opperation. Using only 1
+thread returned the worst time, which was improved moderately by increasing to 2
+threads. Once three threads were used, the times were consistently faster than
+the sequential method. What was interesting was the fact that the bounded
+threadpool method remianed consistent (between 11ms and 19ms) all the way out to
+10,000. I'm curious if there was something about the implementation of the
+threadpool method that is causing it to prevent unnessisary work and overhead,
+even when a rediculous number of threads is selected by the user.
 
 ## Instructions:
 
