@@ -38,19 +38,19 @@ public class Bounded {
 		ExecutorService service = Executors.newFixedThreadPool(10);
 
 		List<Future<List<Integer>>> allFutures = new ArrayList<>();
-		for (int j = 0; j < input; j++) {
+		for (int j = 0; j <= input; j++) {
 			Future<List<Integer>> future = service.submit(new Task(j));
 			allFutures.add(future);
 		}
 
-		for (int j = 0; j < input; j++) {
+		for (int j = 0; j <= input; j++) {
 			Future<List<Integer>> future = allFutures.get(j);
 			try {
 				List<Integer> factors = future.get();
 				if (factors.size() == 2) {
-					primes.add(factors.get(0));
-				} else {
-					nonPrimes.put(factors.get(0), factors);
+					primes.add(j);
+				} else if (factors.size() > 2) {
+					nonPrimes.put(j, factors);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

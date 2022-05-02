@@ -93,6 +93,7 @@ public class UI {
 		// uncomment if you want to print data
 		// System.out.println("\nPrimes: " + primes);
 		// System.out.println("Non Primes: " + nonPrimes);
+
 		System.out.println("");
 		System.out.println(type + " opperation completed for " + input + " completed in: " + time + "ms");
 
