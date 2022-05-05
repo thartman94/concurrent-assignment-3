@@ -7,6 +7,10 @@ import java.util.ArrayList;
  */
 public class Factors {
 
+	/**
+	 * Constructor for the Factors class.
+	 */
+
 	public Factors() {
 	}
 
@@ -18,19 +22,17 @@ public class Factors {
 	 */
 	public List<Integer> getFactors(int number) {
 		List<Integer> factors = new ArrayList<Integer>();
-
-		double sqrt = Math.sqrt(number); // store value to avoid repeated computation
+		double sqrt = Math.sqrt(number);
 
 		for (int i = 1; i <= sqrt; i++) {
 			if (number % i == 0) {
 				factors.add(factors.size() / 2, i);
 
-				if (i != sqrt) {
-					factors.add(1 + (factors.size() / 2), number / i); // avoid doubling the sqrt as a factor
-				}
+				// avoid doubling the sqrt as a factor
+				if (i != sqrt)
+					factors.add(1 + (factors.size() / 2), number / i);
 			}
 		}
-
 		return factors;
 	}
 }

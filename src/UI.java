@@ -9,21 +9,21 @@ import java.util.Scanner;
  */
 
 public class UI {
-
 	Scanner sc;
 
+	/**
+	 * Constructor for the UI class.
+	 */
 	public UI(Scanner sc) {
 		this.sc = sc;
 	}
 
-	/**
-	 * List of the options available to the user.
-	 */
 	String[] operations = {
 			"Exit",
 			"Single Threaded",
 			"Multi Threaded",
 			"Bounded Threadpool",
+			"Stream",
 	};
 
 	/**
@@ -31,7 +31,7 @@ public class UI {
 	 * 
 	 * @return the user's choice
 	 */
-	public int getOpperation() {
+	public int getOperation() {
 		int operation = 0;
 
 		while (true) {
@@ -95,7 +95,7 @@ public class UI {
 		// System.out.println("Non Primes: " + nonPrimes);
 
 		System.out.println("");
-		System.out.println(type + " opperation completed for " + input + " completed in: " + time + "ms");
+		System.out.println(type + " operation completed for " + input + " completed in: " + time + "ms");
 
 		System.out.println("- Sanity checks:");
 		System.out.println("- Total Primes found: " + primes.size());

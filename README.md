@@ -1,8 +1,6 @@
 ## Concurrent Programing - Assignment 3
 
-Rowan University 
-Professor: Patrick McKee 
-Semester: Spring 2022
+Rowan University Professor: Patrick McKee Semester: Spring 2022
 
 ## Writeup:
 
@@ -29,11 +27,11 @@ The following times are the result of running the calculation on a value of
     Bounded (500)		14.0ms
     Bounded (10,000)	15.0ms
 
-Single threaded opperation was fairly quick, while unbounded operation was
+Single threaded operation was fairly quick, while unbounded operation was
 remarkably bad. This is due to the overhead of creating so many threads and
 switching between them.
 
-What was interesting is the results of the bounded opperation. Using only 1
+What was interesting is the results of the bounded operation. Using only 1
 thread returned the worst time, which was improved moderately by increasing to 2
 threads. Once three threads were used, the times were consistently faster than
 the sequential method. What was interesting was the fact that the bounded
